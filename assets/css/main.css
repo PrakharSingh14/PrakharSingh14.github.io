@@ -2201,7 +2201,7 @@ input, select, textarea {
 			.image.avatar img {
 				border-radius: 1%;
 				display: block;
-				width: 180%;
+				width: 100%;
 			}
 
 		.image.main {
@@ -2748,8 +2748,8 @@ input, select, textarea {
 
 			#header > header .avatar {
 				display: block;
-				margin: 0 auto 2.25em auto;
-				width: 8em;
+				margin: 0 0 2.25em 0;
+				width: 100%;
 			}
 
 			#header > header h1 {
