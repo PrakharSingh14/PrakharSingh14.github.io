@@ -2625,7 +2625,7 @@ input, select, textarea {
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		.button.primary {
-			background-color: #191970;
+			background-color: #131122;
 			color: #ffffff !important;
 		}
 
@@ -3085,7 +3085,7 @@ input, select, textarea {
 					}
 
 					#titleBar .toggle:before {
-						background: #191970;
+						background: #131122;
 						color: #ffffff;
 						content: '\f0c9';
 						display: block;
