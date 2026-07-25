@@ -1,0 +1,19 @@
+---
+import { profile } from '../../settings'
+
+const { fullName } = profile
+---
+
+<footer class='footer footer-center bg-base-100 text-base-content px-4 py-8'>
+	<aside>
+		<p>
+			© {new Date().getFullYear()} {fullName}
+		</p>
+		<p class='text-xs text-base-content/50'>
+			Built with <a
+				href='https://github.com/maiobarbero/astro_academia'
+				class='hover:text-base-content/80'
+				target='_blank'>Astro Academia</a>
+		</p>
+	</aside>
+</footer>
