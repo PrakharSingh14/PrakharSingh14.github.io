@@ -14,13 +14,22 @@ import Aries from '@/assets/social-icons/aries.svg'
 
 import { social } from '@/settings'
 
+interface Props {
+	compact?: boolean // use a smaller, single-line layout (e.g. the narrow sidebar)
+}
+const { compact = false } = Astro.props
+
 const activeSocial = Object.keys(social).filter((key) => social[key as keyof typeof social] !== '')
-const calculatedIconSize = activeSocial.length <= 5 ? 'size-7' : activeSocial.length <= 6 ? 'size-6' : 'size-5'
-const calculatedContainerSize = activeSocial.length <= 5 ? 'size-14' : activeSocial.length <= 6 ? 'size-12' : 'size-10'
+const calculatedIconSize = compact
+	? 'size-5'
+	: activeSocial.length <= 5 ? 'size-7' : activeSocial.length <= 6 ? 'size-6' : 'size-5'
+const calculatedContainerSize = compact
+	? 'size-9'
+	: activeSocial.length <= 5 ? 'size-14' : activeSocial.length <= 6 ? 'size-12' : 'size-10'
 
 ---
 
-<div class='flex flex-wrap justify-between items-center'>
+<div class:list={['flex items-center', compact ? 'flex-nowrap justify-center gap-1' : 'flex-wrap justify-between']}>
 
 	<!-- Email -->
 	{social.email !== '' &&
