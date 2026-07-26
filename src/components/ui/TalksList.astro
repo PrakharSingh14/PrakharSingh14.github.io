@@ -9,6 +9,17 @@ interface Props {
   }[];
 }
 const { listTitle, listItems } = Astro.props
+
+const badgeClass = (type: string) => {
+  switch (type.toLowerCase()) {
+    case 'contributed talk':
+      return 'badge-primary';
+    case 'poster':
+      return 'badge-secondary';
+    default:
+      return 'badge-accent';
+  }
+}
 ---
 
 <h2 class='text-2xl font-bold mb-6'>{listTitle}</h2>
@@ -18,7 +29,7 @@ const { listTitle, listItems } = Astro.props
       <div class='p-5 rounded-lg text-base-content bg-base-200'>
         <div class='flex items-start justify-between gap-4 mb-1'>
           <h3 class='text-lg font-semibold'>{item.title}</h3>
-          <span class='badge badge-accent whitespace-nowrap'>{item.type}</span>
+          <span class={`badge ${badgeClass(item.type)} text-base-100 whitespace-nowrap`}>{item.type}</span>
         </div>
         <p class='text-sm'>{item.venue}</p>
         <p class='text-sm italic text-base-content/70'>{item.time}</p>

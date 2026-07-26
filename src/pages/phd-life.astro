@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-const imageFiles = import.meta.glob("/src/assets/beyond-the-lab/*.{jpg,jpeg,png,webp}", {
+const imageFiles = import.meta.glob("/src/assets/phd-life/*.{jpg,jpeg,png,webp}", {
   eager: true,
   query: "?url",
   import: "default",
@@ -17,12 +17,12 @@ const images = Object.entries(imageFiles)
   }));
 ---
 
-<Layout title="Beyond the Lab | Prakhar Singh">
+<Layout title="PhD Life | Prakhar Singh">
   <div class="prose max-w-none">
-    <h1 class="text-3xl font-bold mb-4">Beyond the Lab</h1>
+    <h1 class="text-3xl font-bold mb-4">PhD Life</h1>
     <p class="text-lg mb-10 text-base-content/80">
-      Fieldwork isn't the only kind of ground I cover — a few frames from
-      treks, travel and PhD life outside the observatory.
+      Snapshots from life as a PhD student — treks, travel, conferences,
+      thesis discussions, and everything in between.
     </p>
   </div>
 

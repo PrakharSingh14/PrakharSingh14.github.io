@@ -13,31 +13,35 @@ import { social, contact } from "@/settings";
       way to get in touch is via email — I look forward to hearing from you!
     </p>
 
-    <div class="flex flex-col sm:flex-row gap-8 items-start">
-      {social.email && (
-        <a
-          href={`mailto:${social.email}`}
-          class="btn btn-primary text-primary-content no-underline"
-        >
-          Email me — {social.email}
-        </a>
-      )}
+    {social.email && (
+      <a
+        href={`mailto:${social.email}`}
+        class="btn btn-primary text-primary-content no-underline"
+      >
+        Email me — {social.email}
+      </a>
+    )}
 
-      {contact.openToCollaboration && (
-        <span class="badge badge-accent badge-lg self-center">
-          Open to Collaboration
-        </span>
-      )}
-    </div>
+    {contact.secondaryEmail && (
+      <p class="mt-4 text-sm text-base-content/70">
+        You can also reach me at{" "}
+        <a href={`mailto:${contact.secondaryEmail}`} class="link">{contact.secondaryEmail}</a>
+        {" "}or{" "}
+        <a href={`mailto:${social.email}`} class="link">{social.email}</a>.
+      </p>
+    )}
 
     {contact.addressLines?.length > 0 && (
-      <address class="not-italic mt-10 text-base-content/80 leading-relaxed">
-        {contact.addressLines.map((line) => (
-          <>
-            {line}<br />
-          </>
-        ))}
-      </address>
+      <>
+        <h2 class="text-xl font-bold mt-10 mb-3">Office Address</h2>
+        <address class="not-italic text-base-content/80 leading-relaxed">
+          {contact.addressLines.map((line) => (
+            <>
+              {line}<br />
+            </>
+          ))}
+        </address>
+      </>
     )}
   </div>
 </Layout>

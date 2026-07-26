@@ -1,0 +1,35 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { links } from "@/data/links";
+---
+
+<Layout title="Links | Prakhar Singh">
+  <div class="prose max-w-none">
+    <h1 class="text-3xl font-bold mb-4">Links</h1>
+    <p class="text-lg mb-10 text-base-content/80">
+      A running list of solar-physics resources, tools and repositories I
+      use or maintain.
+    </p>
+  </div>
+
+  {
+    links.length === 0 ? (
+      <div class="rounded-xl border border-dashed border-base-300 p-12 text-center text-base-content/60">
+        Links coming soon.
+      </div>
+    ) : (
+      <div class="grid gap-4 sm:grid-cols-2">
+        {links.map((link) => (
+          <a
+            href={link.url}
+            target="_blank"
+            class="p-5 rounded-lg bg-base-200 text-base-content hover:text-accent transition-colors duration-200 block"
+          >
+            <h2 class="text-lg font-semibold mb-1">{link.title}</h2>
+            {link.description && <p class="text-sm text-base-content/70">{link.description}</p>}
+          </a>
+        ))}
+      </div>
+    )
+  }
+</Layout>

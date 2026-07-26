@@ -1,17 +1,46 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { profile } from "@/settings";
+import { profile, social } from "@/settings";
 import BetterIcon from "@/components/ui/BetterIcon.astro";
 import List from "@/components/ui/List.astro";
 import {RESEARCH_ICONS} from "@/data/researchIcons";
 
-const { research_areas } = profile;
+const { research_areas, thesisTitle } = profile;
+
+const figureFiles = import.meta.glob("/src/assets/research-figures/*.{jpg,jpeg,png,webp}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
+
+const figures = Object.entries(figureFiles)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, url]) => ({
+    url,
+    alt: (path.split("/").pop() ?? "figure")
+      .replace(/\.[^.]+$/, "")
+      .replace(/[-_]/g, " "),
+  }));
 ---
 
 <Layout title="Research | Prakhar Singh">
   <div class="prose max-w-none">
-    <h1 class="text-3xl font-bold mb-8">Research Statement</h1>
+    <div class="flex items-start justify-between gap-4 flex-wrap mb-8">
+      <h1 class="text-3xl font-bold m-0">Research</h1>
+      {social.github && (
+        <a href={social.github} target="_blank" class="btn btn-sm btn-secondary text-secondary-content no-underline">
+          View my GitHub
+        </a>
+      )}
+    </div>
 
+    {thesisTitle && (
+      <p class="text-lg italic border-l-4 border-accent pl-4 mb-10 text-base-content/80">
+        Thesis: "{thesisTitle}"
+      </p>
+    )}
+
+    <h2 class="text-2xl font-bold mb-6">Research Interest</h2>
     <div class="mb-12">
       <p class="text-lg mb-6">
         My research investigates the energetics and coupled dynamics of solar eruptive phenomena
@@ -65,5 +94,24 @@ const { research_areas } = profile;
         description: "Multi-wavelength kinematics and DEM-based energetics of a recurrent active-region jet, with NFFF magnetic extrapolation linking a plasmoid-driven eruption to a null-point reconnection site."
       }
     ]} />
+
+    <h2 class="text-2xl font-bold mb-6">Figures</h2>
   </div>
+
+  {
+    figures.length === 0 ? (
+      <div class="rounded-xl border border-dashed border-base-300 p-12 text-center text-base-content/60">
+        Figures coming soon.
+      </div>
+    ) : (
+      <div class="grid gap-6 sm:grid-cols-2">
+        {figures.map((fig) => (
+          <figure class="m-0">
+            <img src={fig.url} alt={fig.alt} class="w-full rounded-lg shadow-sm" loading="lazy" />
+            <figcaption class="text-sm text-base-content/60 mt-2 capitalize">{fig.alt}</figcaption>
+          </figure>
+        ))}
+      </div>
+    )
+  }
 </Layout>

@@ -1,8 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { publications, talks } from "@/data/cv";
+import { publications } from "@/data/cv";
 import { highlightAuthor } from "@/lib/utils";
-import TalksList from "@/components/ui/TalksList.astro";
 
 const ALL_PAPERS = publications;
 ---
@@ -11,7 +10,7 @@ const ALL_PAPERS = publications;
   <div class="prose max-w-none">
     <h1 class="text-3xl font-bold mb-8">Publications</h1>
 
-    <div class="space-y-8 mb-16">
+    <div class="space-y-8">
       {
         ALL_PAPERS.map((paper) => (
           <div class="card bg-base-200">
@@ -41,7 +40,5 @@ const ALL_PAPERS = publications;
         ))
       }
     </div>
-
-    <TalksList listTitle="Talks & Presentations" listItems={talks} />
   </div>
 </Layout>

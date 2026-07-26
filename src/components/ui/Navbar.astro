@@ -19,7 +19,10 @@ const {fullName, title} = profile
 					alt={fullName}
 					class='size-44 rounded-full object-cover aspect-square'
 				/>
-				<h1 class="text-lg font-black mt-8 hidden lg:block">{title} <span>{fullName}</span></h1>
+				<div class="mt-8 hidden lg:block text-center">
+					<h1 class="text-lg font-black">{fullName}</h1>
+					<p class="text-sm text-base-content/70">{title}</p>
+				</div>
 			</div>
 			<div class='mx-4 mt-16'>
 				<ul class='space-y-4 menu grow shrink menu-md overflow-y-auto'>
@@ -39,7 +42,10 @@ const {fullName, title} = profile
                         <a href={`${template.base}/cv`} class='text-lg'>Curriculum Vitae</a>
                     </li>
 					<li>
-                        <a href={`${template.base}/beyond-the-lab`} class='text-lg'>Beyond the Lab</a>
+                        <a href={`${template.base}/phd-life`} class='text-lg'>PhD Life</a>
+                    </li>
+					<li>
+                        <a href={`${template.base}/links`} class='text-lg'>Links</a>
                     </li>
 					<li>
                         <a href={`${template.base}/contact`} class='text-lg'>Contact</a>
