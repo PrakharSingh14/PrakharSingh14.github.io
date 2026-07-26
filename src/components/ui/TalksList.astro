@@ -13,7 +13,7 @@ const { listTitle, listItems } = Astro.props
 const badgeClass = (type: string) => {
   switch (type.toLowerCase()) {
     case 'contributed talk':
-      return 'badge-primary';
+      return 'badge-info'; // blue — kept distinct from Poster's warm tone
     case 'poster':
       return 'badge-secondary';
     default:

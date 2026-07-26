@@ -1,11 +1,11 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { links } from "@/data/links";
+import { links } from "@/data/resources";
 ---
 
-<Layout title="Links | Prakhar Singh">
+<Layout title="Resources | Prakhar Singh">
   <div class="prose max-w-none">
-    <h1 class="text-3xl font-bold mb-4">Links</h1>
+    <h1 class="text-3xl font-bold mb-4">Resources</h1>
     <p class="text-lg mb-10 text-base-content/80">
       A running list of solar-physics resources, tools and repositories I
       use or maintain.
@@ -15,7 +15,7 @@ import { links } from "@/data/links";
   {
     links.length === 0 ? (
       <div class="rounded-xl border border-dashed border-base-300 p-12 text-center text-base-content/60">
-        Links coming soon.
+        Resources coming soon.
       </div>
     ) : (
       <div class="grid gap-4 sm:grid-cols-2">

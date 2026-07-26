@@ -1,0 +1,20 @@
+---
+interface Props {
+  interests: string[];
+  title?: string;
+}
+const { interests, title = 'Key Interests' } = Astro.props
+---
+
+{interests?.length > 0 && (
+  <>
+    <h2 class='text-2xl font-bold mb-6'>{title}</h2>
+    <div class='flex flex-wrap gap-3'>
+      {interests.map((interest) => (
+        <span class='badge badge-lg badge-outline border-accent text-base-content px-4 py-3'>
+          {interest}
+        </span>
+      ))}
+    </div>
+  </>
+)}

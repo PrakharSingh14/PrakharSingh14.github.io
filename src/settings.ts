@@ -5,19 +5,7 @@ export const profile = {
 	institute: 'ARIES, Nainital · IIT Roorkee',
 	thesisTitle: 'Solar Eruptions Across Different Scales: Energetics and Coupled Dynamics',
 	author_name: 'P. Singh', // Author name to be highlighted in the papers section
-	research_areas: [
-		{
-			title: 'Flare diagnostics',
-			description: 'X-ray spectroscopic diagnostics of solar flares using Aditya-L1/SoLEXS and Chandrayaan-2/XSM, deriving plasma temperature, emission measure and elemental abundances.',
-			field: 'physics',
-		},
-		{
-			title: 'Jet dynamics',
-			description: 'Energetic and kinematic properties of recurrent solar active-region jets using SDO, IRIS and Hinode, including plasmoid-driven morphology transitions.',
-			field: 'physics',
-		},
-	],
-	// Short tags shown on the homepage — add more any time
+	// Short tags shown on the homepage and Research page — add more any time
 	key_interests: [
 		'Solar Flares',
 		'Solar Jet Dynamics and Evolution',

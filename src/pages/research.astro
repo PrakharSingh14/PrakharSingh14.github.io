@@ -1,26 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { profile, social } from "@/settings";
-import BetterIcon from "@/components/ui/BetterIcon.astro";
-import List from "@/components/ui/List.astro";
-import {RESEARCH_ICONS} from "@/data/researchIcons";
+import { profile, social, template } from "@/settings";
+import { projects } from "@/data/projects";
+import KeyInterests from "@/components/ui/KeyInterests.astro";
 
-const { research_areas, thesisTitle } = profile;
-
-const figureFiles = import.meta.glob("/src/assets/research-figures/*.{jpg,jpeg,png,webp}", {
-  eager: true,
-  query: "?url",
-  import: "default",
-}) as Record<string, string>;
-
-const figures = Object.entries(figureFiles)
-  .sort(([a], [b]) => a.localeCompare(b))
-  .map(([path, url]) => ({
-    url,
-    alt: (path.split("/").pop() ?? "figure")
-      .replace(/\.[^.]+$/, "")
-      .replace(/[-_]/g, " "),
-  }));
+const { thesisTitle, key_interests } = profile;
 ---
 
 <Layout title="Research | Prakhar Singh">
@@ -55,63 +39,23 @@ const figures = Object.entries(figureFiles)
       </p>
     </div>
 
-    <h2 class="text-2xl font-bold mb-6">Research Areas</h2>
-    <div class="grid gap-8 mb-12">
+    <div class="mb-12">
+      <KeyInterests interests={key_interests} />
+    </div>
+
+    <h2 class="text-2xl font-bold mb-6">My Work</h2>
+    <div class="grid gap-6 mb-12 not-prose">
       {
-        research_areas.map((area) => (
-          <div class="flex gap-6 items-start">
-            <BetterIcon>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                class="size-6 stroke-accent"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d={RESEARCH_ICONS[area.field as keyof typeof RESEARCH_ICONS]?.path || RESEARCH_ICONS['computer-science'].path}
-                />
-              </svg>
-            </BetterIcon>
-            <div>
-              <h3 class="text-xl font-semibold mb-2">{area.title}</h3>
-              <p class="text-base">{area.description}</p>
-            </div>
-          </div>
+        projects.map((project) => (
+          <a
+            href={`${template.base}/research/${project.slug}`}
+            class="block p-6 rounded-lg bg-base-200 text-base-content hover:text-accent transition-colors duration-200"
+          >
+            <h3 class="text-xl font-semibold mb-2">{project.title}</h3>
+            <p class="text-base">{project.summary}</p>
+          </a>
         ))
       }
     </div>
-
-    <List listTitle="Current Projects" listItems={[
-      {
-        title: "X-ray spectroscopy of solar flares",
-        description: "Isothermal XSPEC fitting (chisoth / CHIANTI) of 47 SoLEXS-observed M-class flares to trace plasma temperature, emission measure and abundance evolution; joint SoLEXS + HEL1OS pipeline combining soft and hard X-ray diagnostics."
-      },
-      {
-        title: "Standard-to-blowout jet transitions",
-        description: "Multi-wavelength kinematics and DEM-based energetics of a recurrent active-region jet, with NFFF magnetic extrapolation linking a plasmoid-driven eruption to a null-point reconnection site."
-      }
-    ]} />
-
-    <h2 class="text-2xl font-bold mb-6">Figures</h2>
   </div>
-
-  {
-    figures.length === 0 ? (
-      <div class="rounded-xl border border-dashed border-base-300 p-12 text-center text-base-content/60">
-        Figures coming soon.
-      </div>
-    ) : (
-      <div class="grid gap-6 sm:grid-cols-2">
-        {figures.map((fig) => (
-          <figure class="m-0">
-            <img src={fig.url} alt={fig.alt} class="w-full rounded-lg shadow-sm" loading="lazy" />
-            <figcaption class="text-sm text-base-content/60 mt-2 capitalize">{fig.alt}</figcaption>
-          </figure>
-        ))}
-      </div>
-    )
-  }
 </Layout>

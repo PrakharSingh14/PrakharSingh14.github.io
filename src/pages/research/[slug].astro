@@ -1,0 +1,64 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { projects } from "@/data/projects";
+import type { Project } from "@/data/projects";
+import { template } from "@/settings";
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+
+const figureFiles = import.meta.glob("/src/assets/projects/*/*.{jpg,jpeg,png,webp}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
+
+const figures = Object.entries(figureFiles)
+  .filter(([path]) => path.includes(`/projects/${project.slug}/`))
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, url]) => ({
+    url,
+    alt: (path.split("/").pop() ?? "figure")
+      .replace(/\.[^.]+$/, "")
+      .replace(/[-_]/g, " "),
+  }));
+---
+
+<Layout title={`${project.title} | Prakhar Singh`}>
+  <div class="prose max-w-none">
+    <a href={`${template.base}/research`} class="text-sm no-underline hover:text-accent">← Back to Research</a>
+    <h1 class="text-3xl font-bold mt-4 mb-8">{project.title}</h1>
+    {project.body.map((paragraph) => (
+      <p class="text-lg mb-6">{paragraph}</p>
+    ))}
+
+    <h2 class="text-2xl font-bold mb-6">Figures</h2>
+  </div>
+
+  {
+    figures.length === 0 ? (
+      <div class="rounded-xl border border-dashed border-base-300 p-12 text-center text-base-content/60">
+        Figures coming soon.
+      </div>
+    ) : (
+      <div class="grid gap-6 sm:grid-cols-2">
+        {figures.map((fig) => (
+          <figure class="m-0">
+            <img src={fig.url} alt={fig.alt} class="w-full rounded-lg shadow-sm" loading="lazy" />
+            <figcaption class="text-sm text-base-content/60 mt-2 capitalize">{fig.alt}</figcaption>
+          </figure>
+        ))}
+      </div>
+    )
+  }
+</Layout>

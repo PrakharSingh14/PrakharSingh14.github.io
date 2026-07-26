@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro'
 
 import { profile } from '@/settings'
 import Hero from '@/components/ui/Hero.astro'
+import KeyInterests from '@/components/ui/KeyInterests.astro'
 
 const { fullName, tagline, key_interests } = profile
 ---
@@ -17,16 +18,7 @@ const { fullName, tagline, key_interests } = profile
 	</section>
 
 	<!-- Key Interests -->
-	{key_interests?.length > 0 && (
-		<section class='py-12 border-t'>
-			<h2 class='text-2xl font-bold mb-6'>Key Interests</h2>
-			<div class='flex flex-wrap gap-3'>
-				{key_interests.map((interest: string) => (
-					<span class='badge badge-lg badge-outline border-accent text-base-content px-4 py-3'>
-						{interest}
-					</span>
-				))}
-			</div>
-		</section>
-	)}
+	<section class='py-12 border-t'>
+		<KeyInterests interests={key_interests} />
+	</section>
 </Layout>
