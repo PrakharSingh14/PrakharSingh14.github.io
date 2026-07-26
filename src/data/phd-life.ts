@@ -15,6 +15,11 @@ export const phdLifeEntries: PhdLifeEntry[] = [
       "<strong><em>The talk that had me nervous all week</em></strong> <br /> Presenting my JRF-to-SRF review talk — the milestone review where a Junior Research Fellow turns into a Senior Research Fellow, marking two years into the PhD",
   },
   {
+    file: "Naini_peak.jpg",
+    caption:
+      "<strong><em>A View Worth the Climb</em></strong> <br /> A scenic reward after the 2-hour trek to Naina Peak — Nainital town and Naini Lake laid out below.",
+  },
+  {
     file: "udaipur-gang.jpg",
     caption:
       "<strong><em>Chai o'clock at USO</em></strong> <br /> Late-night chai breaks by the side of Fatehsagar Lake with the USO gang, during a research visit to Udaipur Solar Observatory — one of several trips there for the ISRO RESPOND project",
