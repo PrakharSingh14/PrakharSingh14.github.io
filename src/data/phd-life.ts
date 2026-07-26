@@ -10,15 +10,28 @@ export interface PhdLifeEntry {
 
 export const phdLifeEntries: PhdLifeEntry[] = [
   {
+    file: "bike_ride.jpeg",
+    caption:
+      "<strong><em>The Bike Finally Made It to ARIES</em></strong> <br /> Bike ride from New Delhi to Nainital, bringing the bike along so I can have many more rides through these mountains.",
+  },
+  {
+    file: "sun_temple.jpg",
+    caption:
+      "<strong><em>A Solar Physicist's Pilgrimage</em></strong> <br /> A nice detour from the usual data and deadlines — paid my respects at the Katarmal Sun Temple.",
+  },
+
+  {
+    file: "Naini_peak.jpg",
+    caption:
+      "<strong><em>A View Worth the Climb</em></strong> <br /> A scenic reward after the 2-hour trek to Naina Peak with Nainital town and Naini Lake in sight.",
+  },
+
+  {
     file: "jrf-srf-review.jpg",
     caption:
       "<strong><em>The talk that had me nervous all week</em></strong> <br /> Presenting my JRF-to-SRF review talk — the milestone review where a Junior Research Fellow turns into a Senior Research Fellow, marking two years into the PhD",
   },
-  {
-    file: "Naini_peak.jpg",
-    caption:
-      "<strong><em>A View Worth the Climb</em></strong> <br /> A scenic reward after the 2-hour trek to Naina Peak — Nainital town and Naini Lake laid out below.",
-  },
+
   {
     file: "udaipur-gang.jpg",
     caption:
