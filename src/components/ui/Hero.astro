@@ -1,6 +1,6 @@
 ---
 import SocialIcons from './SocialIcons.astro'
-import ProfileAvatar from './ProfileAvatar.astro'
+import { template } from '@/settings'
 
 const {fullName, title, institute} = Astro.props
 ---
@@ -19,5 +19,9 @@ const {fullName, title, institute} = Astro.props
   </div>
 </div>
 <div class='size-72 lg:flex hidden items-center justify-center'>
-  <ProfileAvatar name={fullName} class='size-44' />
+  <img
+    src={`${template.base}/profile.jpg`}
+    alt={fullName}
+    class='size-44 rounded-full object-cover aspect-square'
+  />
 </div>
