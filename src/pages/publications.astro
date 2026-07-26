@@ -1,24 +1,24 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { publications } from "@/data/cv";
+import { publications, talks } from "@/data/cv";
 import { highlightAuthor } from "@/lib/utils";
-import {template} from "@/settings";
+import TalksList from "@/components/ui/TalksList.astro";
 
-const ALL_PAPERS = publications; // This will be replaced with dynamic data later
+const ALL_PAPERS = publications;
 ---
 
-<Layout title="Papers">
+<Layout title="Publications | Prakhar Singh">
   <div class="prose max-w-none">
     <h1 class="text-3xl font-bold mb-8">Publications</h1>
 
-    <div class="space-y-8">
+    <div class="space-y-8 mb-16">
       {
         ALL_PAPERS.map((paper) => (
           <div class="card bg-base-200">
             <div class="card-body">
               <h2 class="card-title text-xl">
                 {paper.link
-                  ? <a href={template.base + paper.link} class="hover:text-accent">{paper.title}</a>
+                  ? <a href={paper.link} class="hover:text-accent" target="_blank">{paper.title}</a>
                   : paper.title}
               </h2>
               <p class="text-base mb-2">
@@ -31,7 +31,7 @@ const ALL_PAPERS = publications; // This will be replaced with dynamic data late
               <p class="text-sm text-base-content/80">{paper.abstract}</p>
               {paper.link &&
                 <div class="card-actions justify-end mt-4">
-                  <a href={paper.link} class="btn btn-sm btn-secondary text-secondary-content">
+                  <a href={paper.link} class="btn btn-sm btn-secondary text-secondary-content" target="_blank">
                     Read Paper
                   </a>
                 </div>
@@ -41,5 +41,7 @@ const ALL_PAPERS = publications; // This will be replaced with dynamic data late
         ))
       }
     </div>
+
+    <TalksList listTitle="Talks & Presentations" listItems={talks} />
   </div>
 </Layout>

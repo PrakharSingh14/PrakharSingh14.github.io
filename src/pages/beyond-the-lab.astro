@@ -1,0 +1,47 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const imageFiles = import.meta.glob("/src/assets/beyond-the-lab/*.{jpg,jpeg,png,webp}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
+
+const images = Object.entries(imageFiles)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, url]) => ({
+    url,
+    alt: (path.split("/").pop() ?? "photo")
+      .replace(/\.[^.]+$/, "")
+      .replace(/[-_]/g, " "),
+  }));
+---
+
+<Layout title="Beyond the Lab | Prakhar Singh">
+  <div class="prose max-w-none">
+    <h1 class="text-3xl font-bold mb-4">Beyond the Lab</h1>
+    <p class="text-lg mb-10 text-base-content/80">
+      Fieldwork isn't the only kind of ground I cover — a few frames from
+      treks, travel and PhD life outside the observatory.
+    </p>
+  </div>
+
+  {
+    images.length === 0 ? (
+      <div class="rounded-xl border border-dashed border-base-300 p-12 text-center text-base-content/60">
+        Photos coming soon.
+      </div>
+    ) : (
+      <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 [&>*]:mb-4">
+        {images.map((img) => (
+          <img
+            src={img.url}
+            alt={img.alt}
+            class="w-full rounded-lg break-inside-avoid shadow-sm"
+            loading="lazy"
+          />
+        ))}
+      </div>
+    )
+  }
+</Layout>

@@ -1,0 +1,43 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { social, contact } from "@/settings";
+---
+
+<Layout title="Contact | Prakhar Singh">
+  <div class="prose max-w-none">
+    <h1 class="text-3xl font-bold mb-6">Get In Touch</h1>
+
+    <p class="text-lg mb-8 max-w-2xl">
+      I'm always happy to chat. Whether you're curious about my skills, my
+      research, or just want to connect, feel free to reach out. The best
+      way to get in touch is via email — I look forward to hearing from you!
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-8 items-start">
+      {social.email && (
+        <a
+          href={`mailto:${social.email}`}
+          class="btn btn-primary text-primary-content no-underline"
+        >
+          Email me — {social.email}
+        </a>
+      )}
+
+      {contact.openToCollaboration && (
+        <span class="badge badge-accent badge-lg self-center">
+          Open to Collaboration
+        </span>
+      )}
+    </div>
+
+    {contact.addressLines?.length > 0 && (
+      <address class="not-italic mt-10 text-base-content/80 leading-relaxed">
+        {contact.addressLines.map((line) => (
+          <>
+            {line}<br />
+          </>
+        ))}
+      </address>
+    )}
+  </div>
+</Layout>

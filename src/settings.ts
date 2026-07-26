@@ -15,6 +15,25 @@ export const profile = {
 			field: 'physics',
 		},
 	],
+	// Short tags shown on the homepage — add more any time
+	key_interests: [
+		'Solar Flares',
+		'Solar Jet Dynamics and Evolution',
+		'CME–Jet Relationship',
+		'X-ray Spectroscopy',
+		'Magnetic Field Extrapolation',
+	],
+}
+
+export const contact = {
+	addressLines: [
+		'Room 705',
+		'Main Building',
+		'Aryabhatta Research Institute of Observational Sciences (ARIES)',
+		'Manora Peak',
+		'Nainital, India',
+	],
+	openToCollaboration: true,
 }
 
 // Set equal to an empty string to hide the icon that you don't want to display

@@ -1,15 +1,16 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import { experiences, education, skills, publications } from '../data/cv'
+import { experiences, education, skills, talks, conferences } from '../data/cv'
 import CvTimeline from '@/components/ui/CvTimeline.astro'
+import TalksList from '@/components/ui/TalksList.astro'
+import ConferenceList from '@/components/ui/ConferenceList.astro'
 
-import type { Experience, Education, Publication } from '../types/cv'
+import type { Experience, Education } from '../types/cv'
 import List from '@/components/ui/List.astro'
-import PublicationsList from '@/components/ui/PublicationsList.astro'
+import { template } from '@/settings'
 
 let orderedExperiences: Experience[] = []
 let orderedEducations: Education[] = []
-let orderedPublications: Publication[] = []
 
 const orderElement = <T extends { time: string }>(a: T, b: T) => {
   const presentValues = ['present', 'now', 'current', 'today']
@@ -37,15 +38,20 @@ if (education.length > 0) {
 		return orderElement(a, b)
 	})
 }
-
-if (publications.length > 0) {
-	orderedPublications = publications.sort((a, b) => {
-		return orderElement(a, b)
-	})
-}
 ---
 
-<Layout>
+<Layout title="Curriculum Vitae | Prakhar Singh">
+	<div class='flex items-center justify-between flex-wrap gap-4 mb-12'>
+		<h1 class='text-3xl font-bold'>Curriculum Vitae</h1>
+		<a
+			href={`${template.base}/Prakhar_Singh_CV.pdf`}
+			class='btn btn-primary text-primary-content'
+			target='_blank'
+		>
+			Download CV (PDF)
+		</a>
+	</div>
+
 	{
 		orderedEducations.length > 0 && (
 			<section class='mb-12'>
@@ -69,20 +75,25 @@ if (publications.length > 0) {
 	}
 
 	{
-		orderedPublications.length > 0 && (
+		skills.length > 0 && (
 			<section class='mb-12'>
-				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
-					Last publications
-				</h2>
-				<PublicationsList elements={orderedPublications}/>
+				<List listTitle='Skills' listItems={skills}/>
 			</section>
 		)
 	}
 
 	{
-		skills.length > 0 && (
+		talks.length > 0 && (
 			<section class='mb-12'>
-				<List listTitle='Skills' listItems={skills}/>
+				<TalksList listTitle='Talks & Presentations' listItems={talks} />
+			</section>
+		)
+	}
+
+	{
+		conferences.length > 0 && (
+			<section class='mb-12'>
+				<ConferenceList listTitle='Conferences & Workshops Attended' listItems={conferences} />
 			</section>
 		)
 	}

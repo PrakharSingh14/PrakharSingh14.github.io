@@ -72,6 +72,60 @@ export const skills = [
 	},
 ];
 
+export const talks = [
+	{
+		title: 'Confined vs. Eruptive Solar Flares: A Thermal and Compositional Diagnostic Study with SoLEXS',
+		type: 'Contributed Talk',
+		venue: 'ASI Symposium 003 — Cosmic Vision 2047: Solar and Planetary Dynamics through Observations and AI/ML, JECRC University, Jaipur',
+		time: '8–10 Sep 2025',
+	},
+	{
+		title: 'X-ray Spectroscopic Diagnostics of Confined and Eruptive Flares Using SoLEXS/Aditya-L1',
+		type: 'Poster',
+		venue: 'International Conference on Exploring the Sun at High-Resolution: Present Perspectives and Future Horizons, Udaipur',
+		time: '10–13 Feb 2026',
+	},
+	{
+		title: 'Diagnosing Solar Flare Dynamics: A Comparative Study of Confined and Eruptive Events Using SoLEXS/Aditya-L1',
+		type: 'Poster',
+		venue: 'ISRO-ESA Heliophysics Workshop on Aditya-L1, Solar Orbiter and Proba-3, Thiruvananthapuram',
+		time: '19–23 Jan 2026',
+	},
+	{
+		title: 'Thermal and Compositional Signatures of Confined and Eruptive Flares with SoLEXS/Aditya-L1',
+		type: 'Poster',
+		venue: 'The Variable Sun: Past, Present and Future, VSSC, Thiruvananthapuram',
+		time: '13–17 Oct 2025',
+	},
+	{
+		title: 'Energetic and Kinematic Properties of Recurrent Solar Active Region Jets: Multi-Wavelength Analysis with AIA and IRIS Observations',
+		type: 'Poster',
+		venue: 'Sun, Space Weather and Solar-Stellar Connections, IIA, Bengaluru',
+		time: '20–24 Jan 2025',
+	},
+];
+
+export const conferences = [
+	{ title: 'STIX Team Meeting 2026 (online)', time: '22–24 Jul 2026' },
+	{ title: '2nd European Solar Physics Division (ESPD) Summer School (online)', time: '27 Apr – 1 May 2026' },
+	{ title: 'Mentored a project on SoLEXS data analysis, ATSOAA 2026, ARIES, Nainital', time: '20–30 Apr 2026' },
+	{ title: 'Solar Orbiter Hackathon, ESA/ESTEC, Netherlands — Team 3 (online)', time: '17–21 Nov 2025' },
+	{ title: 'National-Level School on Analysis and Statistical Modelling of Space Science Data, MAHE', time: '7–12 Jul 2025' },
+	{ title: 'Solar Cycle Variability Conference 2024, IIT BHU & ARIES, Nainital', time: '14–18 Oct 2024' },
+	{ title: '2nd Workshop on Space Weather Science and Opportunities, IIT Roorkee', time: '5–9 Oct 2024' },
+	{ title: 'Design of Space Payloads and Developmental Approach, MAHE', time: 'Jun 2023' },
+	{ title: 'IMPRESS 2023, Indian Institute of Geomagnetism', time: '11–14 Feb 2023' },
+	{ title: '11th IIST Astronomy and Astrophysics School, IIST', time: '14–23 Dec 2022' },
+	{ title: '1st Indo-US Collaborative Meeting Space Radiation Workshop, ARIES', time: '24–28 Jan 2022' },
+	{ title: 'Aditya-L1 Support Cell Workshop 13 (Instructor/Mentor), ARIES, Nainital', time: '6–15 Jul 2026' },
+	{ title: 'Aditya-L1 Support Cell Workshop 11 (Instructor/Mentor), Pondicherry University', time: '6–9 Oct 2025' },
+	{ title: 'Aditya-L1 Support Cell Workshop 10 (Instructor/Mentor), ARIES, Nainital', time: '26 May – 4 Jun 2025' },
+	{ title: 'Aditya-L1 Support Cell Workshop 9 (Participant), IIT Guwahati', time: '24–26 Mar 2025' },
+	{ title: 'Aditya-L1 Support Cell Workshop 7 (Participant), ARIES, Nainital', time: '21–30 May 2024' },
+	{ title: 'Aditya-L1 Support Cell Workshop 5 (Participant), IIT Kanpur', time: '29 Sep – 1 Oct 2023' },
+	{ title: 'Aditya-L1 Support Cell Workshop 3 (Participant), IIT BHU', time: '25–27 Feb 2023' },
+];
+
 export const publications = [
 	{
 		title: 'X-ray Spectroscopic Diagnostics of M-Class Solar Flares using SoLEXS onboard Aditya-L1',
