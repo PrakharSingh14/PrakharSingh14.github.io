@@ -4,29 +4,29 @@
 // Entries render in order, alternating image-left/image-right down the page.
 
 export interface PhdLifeEntry {
-	file: string; // filename inside src/assets/phd-life/
-	caption: string;
+  file: string; // filename inside src/assets/phd-life/
+  caption: string;
 }
 
 export const phdLifeEntries: PhdLifeEntry[] = [
-	{
-		file: 'udaipur-gang.jpg',
-		caption:
-			"Evenings with the gang during a research visit to Udaipur Solar Observatory — one of several trips there for the ISRO RESPOND project, between long days of SoLEXS and HEL1OS data work.",
-	},
-	{
-		file: 'manipal-gang.jpg',
-		caption:
-			"Back at Manipal Centre for Natural Sciences, MAHE, with the group from my time there working on active-region UV/EUV emission and photospheric magnetic activity, before I moved to ARIES for my PhD.",
-	},
-	{
-		file: 'dipu-gang.jpg',
-		caption:
-			"A full house at one of the Aditya-L1 Support Cell workshops — I've been on both sides of these over the years, first as a participant and later mentoring newer students through SoLEXS data analysis.",
-	},
-	{
-		file: 'jrf-srf-review.jpg',
-		caption:
-			"Presenting my JRF-to-SRF review talk, walking through the classification of confined versus eruptive solar flares — one of the milestones along the way to where the research stands now.",
-	},
+  {
+    file: "jrf-srf-review.jpg",
+    caption:
+      "<strong><em>The talk that had me nervous all week</em></strong> <br /> Presenting my JRF-to-SRF review talk — the milestone review where a Junior Research Fellow turns into a Senior Research Fellow, marking two years into the PhD",
+  },
+  {
+    file: "udaipur-gang.jpg",
+    caption:
+      "<strong><em>Chai o'clock at USO</em></strong> <br /> Late-night chai breaks by the side of Fatehsagar Lake with the USO gang, during a research visit to Udaipur Solar Observatory — one of several trips there for the ISRO RESPOND project",
+  },
+  {
+    file: "manipal-gang.jpg",
+    caption:
+      "<strong><em>The Place That Started It</em></strong> <br /> Back at the Manipal Centre for Natural Sciences, MAHE, for the statistics school — the perfect excuse to reconnect with the group where my interest in solar physics first took root, before I moved to ARIES for my PhD",
+  },
+  {
+    file: "dipu-gang.jpg",
+    caption:
+      "<strong><em>The one with the Dipu gang 🌞</em></strong> <br /> A full house at ARIES for The Variable Sun (TVS) conference — from super seniors to supervisor to their supervisor, the whole chain was there",
+  },
 ];
