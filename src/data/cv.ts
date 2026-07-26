@@ -18,14 +18,20 @@ export const experiences = [
 		time: 'Jun 2023 - Dec 2023',
 		title: 'Chromospheric heating during active-region evolution',
 		location: 'Manipal, India',
-		description: 'Examined the correlation between an active region\u2019s UV/EUV emission and photospheric magnetic activity using HMI and AIA channels; derived temperature and emission-measure maps via DEM analysis. Supervisor: Dr. Sreejith Padinhatteeri.',
+		description: [
+			'Examined the correlation between an active region\u2019s UV/EUV emission and photospheric magnetic activity using HMI and AIA channels; derived temperature and emission-measure maps via DEM analysis.',
+			'Supervisor: Dr. Sreejith Padinhatteeri.',
+		],
 	},
 	{
 		company: 'Banaras Hindu University',
 		time: 'Aug 2022 - Apr 2023',
 		title: 'Remote sensing of the lower ionosphere using VLF radio waves',
 		location: 'Varanasi, India',
-		description: 'MSc thesis. Investigated nighttime D-layer height, electron density and propagation distance using VLF data from an Automatic Whistler Detector network. Supervisor: Prof. Abhay Kumar Singh.',
+		description: [
+			'MSc thesis. Investigated nighttime D-layer height, electron density and propagation distance using VLF data from an Automatic Whistler Detector network.',
+			'Supervisor: Prof. Abhay Kumar Singh.',
+		],
 	},
 ];
 
@@ -35,21 +41,22 @@ export const education = [
 		time: 'Dec 2023 - present',
 		degree: 'PhD, Solar Physics',
 		location: 'Nainital, India',
-		description: 'Thesis: "Solar Eruptions Across Different Scales: Energetics and Coupled Dynamics." Funded under the ISRO RESPOND programme (Grant No. RES-PRL-2022-018).',
+		description: [
+			'Thesis: "Solar Eruptions Across Different Scales: Energetics and Coupled Dynamics."',
+			'Funded under the ISRO RESPOND programme (Grant No. RES-PRL-2022-018).',
+		],
 	},
 	{
 		school: 'Banaras Hindu University',
 		time: '2021 - 2023',
 		degree: 'MSc Physics',
 		location: 'Varanasi, India',
-		description: 'CGPA 8.7/10. 3rd rank in class.',
 	},
 	{
 		school: 'Aligarh Muslim University',
 		time: '2018 - 2021',
 		degree: 'BSc Physics',
 		location: 'Aligarh, India',
-		description: 'CGPA 8.1/10.',
 	},
 ];
 

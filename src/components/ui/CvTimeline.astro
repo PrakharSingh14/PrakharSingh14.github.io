@@ -35,7 +35,10 @@ const { elements, colored } = Astro.props
 				>
 					<time class='font-mono italic'>{element.time}</time>
 					<div class='text-lg font-black'>{isExperience(element) ? element.title : element.degree}</div>
-					<div>{element.description}</div>
+					{Array.isArray(element.description)
+						? element.description.map((line) => <div>{line}</div>)
+						: element.description && <div>{element.description}</div>
+					}
 					<div>{isExperience(element) ? element.company : element.school}</div>
 					<div>{element.location}</div>
 				</div>

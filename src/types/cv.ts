@@ -3,7 +3,7 @@ export interface Experience {
   time: string;
   title: string;
   location?: string;
-  description?: string;
+  description?: string | string[];
 }
 
 export interface Education {
@@ -11,7 +11,7 @@ export interface Education {
   time: string;
   degree: string;
   location?: string;
-  description?: string;
+  description?: string | string[];
 }
 
 export interface Skill {

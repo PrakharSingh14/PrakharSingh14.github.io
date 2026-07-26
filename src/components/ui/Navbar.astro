@@ -21,7 +21,9 @@ const {fullName, title} = profile
 				/>
 				<div class="mt-8 hidden lg:block text-center">
 					<h1 class="text-lg font-black">{fullName}</h1>
-					<p class="text-sm text-base-content/70">{title}</p>
+					<p class="text-base text-base-content/70 leading-snug">
+						{title.split(', ').map((line, i, arr) => <>{line}{i < arr.length - 1 && <br />}</>)}
+					</p>
 				</div>
 			</div>
 			<div class='mx-4 mt-16'>
