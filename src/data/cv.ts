@@ -206,19 +206,21 @@ export const publications = [
   {
     title:
       "X-ray Spectroscopic Diagnostics of M-Class Solar Flares using SoLEXS onboard Aditya-L1",
-    authors: "P. Singh, et al.",
+    authors:
+      "Prakhar Singh, Vaibhav Pant, Bhuwan Singh, Abhilash R Sarwade, M V Sunil Krishna",
     journal:
-      "Journal of Astrophysics and Astronomy (Aditya-L1 Topical Issue) \u2014 submitted",
+      "Topical Issue of Journal of Astrophysics and Astronomy \u2014 (submitted)",
     time: "2026",
     link: "",
     abstract:
-      "Spectral analysis of 47 SoLEXS-observed M-class flares using an isothermal XSPEC fitting pipeline to derive flare plasma temperature, emission measure and abundance evolution.",
+      "Spectral analysis of 47 SoLEXS-observed M-class flares using an isothermal XSPEC fitting pipeline to derive flare plasma temperature and emission measure.",
   },
   {
     title:
       "From Standard to Blowout: Plasmoid-Driven Morphology Transition of a Recurrent Solar Jet",
-    authors: "P. Singh, et al.",
-    journal: "The Astrophysical Journal \u2014 in preparation",
+    authors:
+      "Prakhar Singh, Vaibhav Pant, Bhuwan Singh, Arpit K Srivastav, Sushree S Nayak, M V Sunil Krishna",
+    journal: "The Astrophysical Journal \u2014 (in preparation)",
     time: "2026",
     link: "",
     abstract:
