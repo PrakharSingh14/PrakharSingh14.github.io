@@ -40,7 +40,7 @@ export const social = {
   inspire: "",
   arxiv: "",
   orcid: "https://orcid.org/0009-0005-1007-9159",
-  instagram: "https://www.instagram.com/prakharpratap14/",
+  instagram: "",
   aries: "https://www.aries.res.in/people/user-profile/res/992",
 };
 
